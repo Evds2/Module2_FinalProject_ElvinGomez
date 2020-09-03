@@ -1,5 +1,5 @@
 const MainPage = require('../pageobjects/mainPage.page');
-const SecurePage = require('../pageobjects/secure.page');
+const ResultPage = require('../pageobjects/resultPage.page');
 
 
 describe('Insert numbers of passengers', () => {
@@ -17,6 +17,8 @@ describe('Booking a familiar flight', () => {
         MainPage.getClosingSanJose().click();
         MainPage.searchingFlights("TXL", "LHR");
         browser.pause(2000);
+        expect(browser).toHaveUrl('https://www.kiwi.com/es/buscar/results/aeropuerto-de-berlin-tegel-berlin-alemania/aeropuerto-de-londres-heathrow-londres-reino-unido/2020-11-12/2020-11-29?adults=2&children=3&infants=2');
+        expect(ResultPage.getResultWrapperCard()).toBeDisplayed();
        
     });
 });

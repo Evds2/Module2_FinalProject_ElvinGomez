@@ -10,4 +10,8 @@ module.exports = class Page {
     open (path) {
         return browser.url(`https://www.kiwi.com/es/`)
     }
+
+    open2ndTest (path) {
+        return browser.url(``);
+    }
 }

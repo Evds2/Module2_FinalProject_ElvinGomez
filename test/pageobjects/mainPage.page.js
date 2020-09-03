@@ -7,7 +7,7 @@ class MainPage extends Page {
     get inputClosingSanJose() {return $("//*[@data-test='PlacePickerInputPlace-close']")}
     //este xpath esta muy vulgar pero solo asi le pude llegar
     get inputDestinyLabel() {return $("//*[@id='landingPage']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]/div/input")}
-    get selectedDepartureAirportLabel() {return $()}
+    get selectedDepartureAirportLabel() {return $("//div[@data-test='PlacePickerRow-station']")}
     get inputDepartureLabel() {return $("//*[@data-test='SearchFieldDateInput']")}
     get inputArrivalLabel() {return $("//*[@name='search-inboundDate']")}
     get departureCalendarMoveNextButton() {return $("//*[@data-test='CalendarMoveNextButton']")}
@@ -19,6 +19,7 @@ class MainPage extends Page {
     get incrementChildrenPassengersBtn() {return $("//div[@data-test='PassengersRow-children']//div[@class='StepperStateless__StyledStepper-dh3icj-0 evBPUx']//button[@aria-label='increment']")}
     get incrementInfantsPassengersBtn() {return $("//div[@data-test='PassengersRow-infants']//div[@class='StepperStateless__StyledStepper-dh3icj-0 evBPUx']//button[@aria-label='increment']")}
     get confirmationOfPassengersBtn() {return $("//button[@data-test='PassengersFieldFooter-done']")}
+    get searchButton() {return $("//a[@data-test='LandingSearchButton']")}
 
     getClosingSanJose(){
         return this.inputClosingSanJose;
@@ -84,6 +85,10 @@ class MainPage extends Page {
         return this.confirmationOfPassengersBtn;
     }
 
+    getSearchButton(){
+        return this.searchButton;
+    }
+
     movingNextInCalendarFunction(){
         for (var i = 0; i < 3; i++) {
             this.getCalendarMoveNextBtn().click();
@@ -117,12 +122,15 @@ class MainPage extends Page {
         this.inputOriginLabel.setValue(departure);
         this.getTypedAirportLabel().click();
         this.inputDestinyLabel.setValue(arrival);
-        this.getSelectedDepartureAirport().click();
+        //this.getSelectedDepartureAirport().click();
+        browser.pause(2000);
+        browser.keys("\uE007"); 
         this.getDepartureLabel().click();
         this.movingNextInCalendarFunction();
         this.getDepartureDateBtn().click();
         this.getArrivalDateBtn().click();
         this.getEstablishDateBtn().click();
+        this.getSearchButton().click();
 
     }
   
