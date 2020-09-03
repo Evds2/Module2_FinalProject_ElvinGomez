@@ -12,6 +12,6 @@ module.exports = class Page {
     }
 
     open2ndTest (path) {
-        return browser.url(``);
+        return browser.url(`https://www.kiwi.com/us/search/results/berlin-tegel-berlin-germany/london-united-kingdom/2020-10-01_2020-10-31/2020-10-01_2020-10-31`);
     }
 }
