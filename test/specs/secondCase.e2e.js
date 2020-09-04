@@ -12,8 +12,16 @@ describe('filters in result page', () => {
 
 describe('filter to bus', () => {
     it('should filter to bus and validate that there are no trips', () => {
-        browser.pause(6000);
-        ResultPage.getFilterOnlyByBusBtn().click();
-        browser.pause(2000);
+        browser.setTimeout({'implicit': 3000});
+        //ResultPage.getFilterOnlyByBusBtn().click();
+        //expect(ResultPage.getAlertOfNoResults()).toBeDisplayed();
+    });
+})
+
+describe('filter to train', () => {
+    it('should add train filter to validate trips', () => {
+        browser.setTimeout({'implicit': 3000});
+        //ResultPage.getFilterOnlyByTrain().click();
+        //expect(ResultPage.getAlertOfNoResults().toBeDisplayed());
     });
 })

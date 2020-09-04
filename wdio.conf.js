@@ -18,7 +18,8 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js'
-        './test/specs/secondCase.e2e.js'
+        './test/specs/thirdCase.e2e.js'
+        //'./test/specs/secondCase.e2e.js'
         //'./test/specs/firstCase.e2e.js'
 
     ],

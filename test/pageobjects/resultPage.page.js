@@ -3,9 +3,11 @@ const Page = require('./page');
 class ResultPage extends Page {
     get resultWrapper() {return $("//div[@data-test='ResultCardWrapper']")};
     get resultsOfAvailableTrips() {return $("//div[@class='transition-results']")}
-    get filterOnlyByAircraftBtn() {return $("//*[@class='Checkbox__IconContainer-sc-1x6twh3-0 ipOrEF']")}
-    get filterOnlyByTrainBtn() {return $("//*[@class='Checkbox__IconContainer-sc-1x6twh3-0 ipOrEF']")[2]}
-    get filterOnlyByBusBtn() {return $('/html/body/div[2]/div[3]/div[1]/div[2]/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div[2]/div/div/div/div[2]/div/button/div/div')}
+    get filterOnlyByAircraftBtn() {return $('')}
+    get filterOnlyByTrainBtn() {return $('')}
+    get filterOnlyByBusBtn() {return $('')}
+    get noResultsAlert() {return $('.Heading__StyledHeading-sc-1b8cso5-0 fGFWje=No hay resultados para esta búsqueda')}
+    get bookingNowBtn() {return $("//*[@data-test='BookingButton']")}
 
     getResultWrapperCard(){
         return this.resultWrapper;
@@ -26,6 +28,14 @@ class ResultPage extends Page {
     getFilterOnlyByBusBtn(){
 
         return this.filterOnlyByBusBtn;
+    }
+
+    getAlertOfNoResults(){
+        return this.noResultsAlert;
+    }
+
+    getBookingNowBtn(){
+        return this.bookingNowBtn;
     }
 
 
